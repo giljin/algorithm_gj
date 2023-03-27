@@ -4,12 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Map<Integer, Integer> remainMap = new HashMap<>();
-
+        Set<Integer> remainSet = new HashSet<>();
         for (int i = 0; i < 10; i++) {
-            remainMap.put(scanner.nextInt() % 42, 1);
+            remainSet.add(scanner.nextInt() % 42);
         }
-
-        System.out.println(remainMap.size());
+        System.out.println(remainSet.size());
     }
 }
