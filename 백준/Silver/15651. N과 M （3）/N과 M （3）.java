@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 public class Main {
 
     public static int[] arr;
-    public static boolean[] visit;
     public static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
@@ -15,7 +14,6 @@ public class Main {
         int m = Integer.parseInt(nm[1]);
 
         arr = new int[m];
-        visit = new boolean[n];
         dfs(n, m, 0);
         System.out.println(sb);
 
