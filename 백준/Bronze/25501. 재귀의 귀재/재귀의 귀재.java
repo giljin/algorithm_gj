@@ -3,29 +3,25 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-
+    static int cnt = 0;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         for (int i = 0; i < n; i++) {
             String word = br.readLine();
-            System.out.println(isPalindrome(word));
+            System.out.println(isPalindrome(word,0, word.length()-1));
+            cnt = 0;
         }
     }
 
-    public static String isPalindrome(String word){
-        return recursion(word.split(""), 0, word.length()-1, 0);
-    }
-
-    public static String recursion(String[] chars, int front, int back, int count){
-        count++;
-        if( front >= back ){
-            return 1 + " " + count;
-        }else if( !chars[front].equals(chars[back]) ){
-            return 0 + " " + count;
+    public static String isPalindrome(String word, int s, int e) {
+        cnt++;
+        if( s >= e ){
+            return "1 " + cnt;
         }
-
-        return recursion(chars, front+1, back-1, count);
+        if( word.charAt(s) != word.charAt(e) ){
+            return "0 " + cnt;
+        }
+        return isPalindrome(word, s+1, e-1);
     }
-
 }
