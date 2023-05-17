@@ -13,18 +13,12 @@ public class Main {
         }
 
         int result = 0;
-        while (K > 0){
-            for (int i = N-1; i >= 0 ; i--) {
-                if( coins[i] <= K ){
-                    K -= coins[i];
-                    result++;
-                    break;
-                }
+        for (int i = N - 1; i >= 0 || K > 0; i--) {
+            if (coins[i] <= K) {
+                result += K / coins[i];
+                K %= coins[i];
             }
         }
         System.out.println(result);
-
     }
-
-
 }
