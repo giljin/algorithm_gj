@@ -13,7 +13,7 @@ public class Main {
         }
 
         int result = 0;
-        for (int i = N - 1; i >= 0 || K > 0; i--) {
+        for (int i = N - 1; i >= 0 && K > 0; i--) {
             if (coins[i] <= K) {
                 result += K / coins[i];
                 K %= coins[i];
