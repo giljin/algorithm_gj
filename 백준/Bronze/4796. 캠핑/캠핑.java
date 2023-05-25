@@ -9,16 +9,23 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int i = 1;
-        while (true) {
+
+        while (true){
             StringTokenizer st = new StringTokenizer(br.readLine());
-            int l = Integer.parseInt(st.nextToken());
-            int p = Integer.parseInt(st.nextToken());
-            int v = Integer.parseInt(st.nextToken());
-            if (l == 0 && p == 0 && v == 0) break;
-            int total = l * (v / p) + Math.min(l, v % p);
-            sb.append("Case " + i + ": " + total + "\n");
+            int L = Integer.parseInt(st.nextToken());
+            int P = Integer.parseInt(st.nextToken());
+            int V = Integer.parseInt(st.nextToken());
+            if(L+P+V == 0){
+                break;
+            }
+            int days = Math.min(L,V % P) + (V / P * L);
+            sb.append("Case ")
+                    .append(i)
+                    .append(": ")
+                    .append(days)
+                    .append("\n");
             i++;
         }
-        System.out.print(sb);
+        System.out.println(sb);
     }
 }
