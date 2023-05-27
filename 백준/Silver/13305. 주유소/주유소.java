@@ -20,8 +20,8 @@ public class Main {
             prices[i] = Integer.parseInt(priceTokens.nextToken());
         }
 
-        int result = distances[0] * prices[0];
-        int minPrice = prices[0];
+        long result = distances[0] * prices[0];
+        long minPrice = prices[0];
         for (int i = 1; i <prices.length-1; i++) {
             if (minPrice > prices[i]){
                 minPrice = prices[i];
