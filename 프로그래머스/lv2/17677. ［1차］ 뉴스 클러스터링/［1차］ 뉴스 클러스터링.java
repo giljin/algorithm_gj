@@ -30,7 +30,6 @@ class Solution {
             if( search > -1 ){
                 //교집합 카운트
                 cross++;
-                str1List.remove(i--);
                 str2List.remove(search);
             }
         }
