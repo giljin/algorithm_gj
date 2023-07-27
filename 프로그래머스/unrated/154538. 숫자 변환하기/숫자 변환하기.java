@@ -6,7 +6,7 @@ class Solution {
         if( x == y ){
             return 0;
         }
-        
+
         boolean[] visited = new boolean[1000001];
         visited[x] = true;
         Queue<int[]> queue = new LinkedList<>();
@@ -17,20 +17,21 @@ class Solution {
             int[] arr = queue.poll();
 
             for (int i = 0; i < options.length; i++) {
-                int beforeNumber = arr[0];
+                int afterNumber = arr[0];
                 if(i == 0){
-                    beforeNumber += options[i];
+                    afterNumber += options[i];
                 }else{
-                    beforeNumber *= options[i];
+                    afterNumber *= options[i];
                 }
-                
-                if(beforeNumber == y){
+
+                if(afterNumber == y){
                     return arr[1]+1;
                 }
-                if( y > beforeNumber ){
-                    if( !visited[beforeNumber] ){
-                        visited[beforeNumber] = true;
-                        queue.add(new int[]{beforeNumber, arr[1]+1});    
+
+                if( y > afterNumber ){
+                    if( !visited[afterNumber] ){
+                        visited[afterNumber] = true;
+                        queue.add(new int[]{afterNumber, arr[1]+1});
                     }
                 }
             }
