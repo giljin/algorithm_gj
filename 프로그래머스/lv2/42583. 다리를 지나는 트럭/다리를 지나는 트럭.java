@@ -9,7 +9,7 @@ class Solution {
         int i = 0;
         while (true){
 
-            if( i < truck_weights.length && bridgeWeightSum + truck_weights[i] <= weight ){
+            if( bridgeWeightSum + truck_weights[i] <= weight ){
                 bridgeWeightSum += truck_weights[i];
                 bridge.add(truck_weights[i++]);
                 answer++;
