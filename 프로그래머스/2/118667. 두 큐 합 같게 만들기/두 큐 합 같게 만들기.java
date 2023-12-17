@@ -10,8 +10,9 @@ class Solution {
         long sum2 = getQueueSum(q2);
 
         int answer = 0;
+        int maxCount = (q1.size() + q2.size())+1;
         while (sum1 != sum2) {
-            if (answer > (q1.size() + q2.size() * 2)) {
+            if (answer > maxCount) {
                 return -1;
             }
 
