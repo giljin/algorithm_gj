@@ -1,9 +1,8 @@
-import java.util.*;
-
 class Solution {
     public String solution(String p) {
         return work(p);
     }
+    
     public String work(String p){
         String result = "";
         if(p.isEmpty()){
@@ -19,6 +18,7 @@ class Solution {
         String uTemp = u.substring(1, u.length()-1);
         return temp + reverse(uTemp);
     }
+    
     public String reverse(String p){
         String result = "";
         for(int i=0; i<p.length(); i++){
@@ -50,8 +50,7 @@ class Solution {
     
     public String[] split(String p){      
         int[] counts = new int[2];
-        counts[p.charAt(0)-'(']++;
-        for(int i=1; 1<p.length(); i++){
+        for(int i=0; 1<p.length(); i++){
             counts[p.charAt(i)-'(']++;
             if (counts[0] == counts[1]){
                 return new String[]{p.substring(0, i+1), p.substring(i+1)};
