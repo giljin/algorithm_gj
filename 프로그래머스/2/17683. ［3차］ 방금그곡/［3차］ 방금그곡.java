@@ -12,12 +12,10 @@ class Solution {
             
             int musicPlayTime = calculateMusicPlayTime(start, end);
             String fullMusic = createFullMusic(music, musicPlayTime);
-            System.out.println(fullMusic);
             
             boolean isContain = containMusicName(fullMusic, m);
             if (isContain){
             
-                
                 if (answerMusicPlayTime < musicPlayTime) {
                     answer = musicName;
                     answerMusicPlayTime = musicPlayTime;
@@ -34,11 +32,13 @@ class Solution {
                 return false;
             }
             
+            //뒤에 더이상 글자가 없으면
             int searchIndex = findIndex + keyword.length();
             if (searchIndex >= fullMusic.length()){
                 return true;
             }
             
+            //뒤에 #이 아니면
             char nextChar = fullMusic.charAt(searchIndex);
             if (nextChar != '#'){
                 return true;
