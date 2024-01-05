@@ -41,7 +41,6 @@ class Solution {
         int[] dx = {0, 1, 0, -1};
         int[] dy = {-1, 0, 1, 0};
         int LimmitMangattanDistance = 2;
-        char empty = 'O';
         
         while(!queue.isEmpty()){
             Location location = queue.poll();
